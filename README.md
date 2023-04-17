@@ -9,7 +9,7 @@ Website data is written in HTML (HyperText Markup Language) which uses tags to s
 
 Let's get started by exploring the structure of HTML files.
 
-### Accessing the HTML 📥
+#### Accessing the HTML 📥
 >- Manual Access
 The quick way to get HTML data is by saving the HTML file to your computer manually. You can do this by clicking Save in your browser.
 
