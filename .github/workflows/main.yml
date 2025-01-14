@@ -1,0 +1,24 @@
+name: Daily Commit and Backfill Workflow
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # This schedules the job to run every day at noon (UTC)
+  push:
+    branches:
+      - main  # Trigger this workflow when pushing to the main branch
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # This grants write access to commit changes
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Make a Daily Commit
+      uses: bcanseco/github-contribution-graph-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_EMAIL: trust.ayeniolamilekan@gmail.com  # Replace with your email address
